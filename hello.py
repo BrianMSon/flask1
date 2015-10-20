@@ -4,12 +4,16 @@ from flask import Flask
 app = Flask(__name__)
 
 @app.route('/')
-def hello_world():
-    return 'Hello World!!!'
+def show_index_page():
+    return 'Flask Test Page!!!'
 
-@app.route('/hello')
-def hello():
-    return 'Hello!'
+@app.route('/user')
+def select_user():
+    return 'user list...'
+
+@app.route('/user/<id>/<name>')
+def insert_user():
+    return 'insert user [%s, %s]' % id & name;
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
