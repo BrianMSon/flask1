@@ -12,12 +12,12 @@ def select_user():
     return 'user list...'
 
 @app.route('/user/<name>')
-def insert_user():
-    return 'insert user [%s]' % name;
+def insert_user(name):
+    return 'insert user : %s' % name;
 
-#@app.route('/user/<id>/<name>')
-#def insert_user2():
-#    return 'insert user [%s, %s]' % (id, name);
+@app.route('/user/<id>/<name>')
+def insert_user2(id, name):
+    return 'insert user [%s, %s]' % (id, name);
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
