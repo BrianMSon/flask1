@@ -11,9 +11,13 @@ def show_index_page():
 def select_user():
     return 'user list...'
 
+@app.route('/user/<name>')
+def insert_user():
+    return 'insert user [%s]' % name;
+
 @app.route('/user/<id>/<name>')
 def insert_user():
-    return 'insert user [%s, %s]' % id & name;
+    return 'insert user [%s, %s]' % (id, name);
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
