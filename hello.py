@@ -7,15 +7,15 @@ app = Flask(__name__)
 def show_index_page():
     return 'Flask Test Page!!!'
 
-@app.route('/user')
+@app.route('/user/')
 def select_user():
     return 'user list...'
 
-@app.route('/user/<name>')
+@app.route('/user/<name>/')
 def insert_user(name):
     return 'insert user : %s' % name;
 
-@app.route('/user/<id>/<name>')
+@app.route('/user/<id>/<name>/')
 def insert_user2(id, name):
     return 'insert user [%s, %s]' % (id, name);
 
